@@ -65,7 +65,7 @@ const basicData = ref({
 const pluginsAmount = ref(0)
 
 const refresh = () => {
-    proxy.$axios.get('/stats/basic').then(res => {
+    proxy.$axios.get('stats/basic').then(res => {
         if (res.data.code != 0) {
             snackbar.error(res.data.msg)
             return
@@ -75,7 +75,7 @@ const refresh = () => {
         snackbar.error(error)
     })
 
-    proxy.$axios.get('/plugins').then(res => {
+    proxy.$axios.get('plugins').then(res => {
         if (res.data.code != 0) {
             snackbar.error(res.data.msg)
             return

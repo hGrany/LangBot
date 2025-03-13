@@ -181,7 +181,7 @@ const reloadScopeLabel = {
 
 function reload(scope) {
   let label = reloadScopeLabel[scope]
-  proxy.$axios.post('/system/reload',
+  proxy.$axios.post('system/reload',
     { scope: scope },
     { headers: { 'Content-Type': 'application/json' } }
   ).then(response => {
@@ -209,7 +209,7 @@ function closeAboutDialog() {
 }
 
 function checkSystemInitialized() {
-  proxy.$axios.get('/user/init').then(response => {
+  proxy.$axios.get('user/init').then(response => {
     if (response.data.code === 0) {
       proxy.$store.state.user.systemInitialized = response.data.data.initialized
     } else {
@@ -225,7 +225,7 @@ function checkSystemInitialized() {
 }
 
 function checkToken() {
-  proxy.$axios.get('/user/check-token').then(response => {
+  proxy.$axios.get('user/check-token').then(response => {
     if (response.data.code === 0) {
       proxy.$store.state.user.tokenValid = true
     } else {

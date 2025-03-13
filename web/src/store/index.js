@@ -6,7 +6,7 @@ export default createStore({
   state: {
     // 开发时使用
     // apiBaseUrl: 'http://localhost:5300/api/v1',
-    apiBaseUrl: '/api/v1',
+    apiBaseUrl: 'api/v1',
     autoRefreshLog: false,
     autoScrollLog: true,
     settingsPageTab: '',
@@ -35,14 +35,14 @@ export default createStore({
     initializeFetch() {
       axios.defaults.baseURL = this.state.apiBaseUrl
 
-      axios.get('/system/info').then(response => {
+      axios.get('system/info').then(response => {
         this.state.version = response.data.data.version
         this.state.debug = response.data.data.debug
         this.state.enabledPlatformCount = response.data.data.enabled_platform_count
       })
     },
     fetchSystemInfo() {
-      axios.get('/system/info').then(response => {
+      axios.get('system/info').then(response => {
         this.state.version = response.data.data.version
         this.state.debug = response.data.data.debug
         this.state.enabledPlatformCount = response.data.data.enabled_platform_count

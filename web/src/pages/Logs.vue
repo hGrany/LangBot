@@ -45,7 +45,7 @@ import { AnsiUp } from 'ansi_up';
 const ansiUp = new AnsiUp()
 
 const refreshLog = () => {
-    proxy.$axios.get(`/logs`, {
+    proxy.$axios.get(`logs`, {
         params: {
             start_page_number: logPointer.start_page_number,
             start_offset: logPointer.start_offset

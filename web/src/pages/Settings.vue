@@ -37,7 +37,7 @@ const { proxy } = getCurrentInstance()
 const managerList = ref([])
 
 const refresh = () => {
-  proxy.$axios.get('/settings').then(response => {
+  proxy.$axios.get('settings').then(response => {
 
     if (response.data.code != 0) {
       snackbar.error(response.data.msg)

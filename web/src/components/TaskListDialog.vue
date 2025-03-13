@@ -35,7 +35,7 @@ const close = () => {
 const taskList = ref([])
 
 const refresh = () => {
-    proxy.$axios.get('/system/tasks', {
+    proxy.$axios.get('system/tasks', {
         params: {
             type: 'user'
         }

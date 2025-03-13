@@ -123,7 +123,7 @@ const modified = ref(false)
 const fetchCurrentManagerData = (name) => {
     console.log(name)
     return new Promise((resolve, reject) => {
-        proxy.$axios.get(`/settings/${name}`).then(response => {
+        proxy.$axios.get(`settings/${name}`).then(response => {
             console.log(response.data.data)
             currentManagerData.value = response.data.data.manager.data
             currentManagerSchema.value = response.data.data.manager.schema

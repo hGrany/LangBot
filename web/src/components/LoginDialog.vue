@@ -43,7 +43,7 @@ const rules = {
 
 
 const login = () => {
-    proxy.$axios.post('/user/auth', {
+    proxy.$axios.post('user/auth', {
         user: user.value,
         password: password.value
     }).then(res => {

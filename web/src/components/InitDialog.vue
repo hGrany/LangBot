@@ -69,7 +69,7 @@ const initialize = () => {
         return
     }
 
-    proxy.$axios.post('/user/init', {
+    proxy.$axios.post('user/init', {
         user: user.value,
         password: password.value
     }).then(res => {

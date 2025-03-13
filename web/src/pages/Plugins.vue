@@ -111,7 +111,7 @@ const { proxy } = getCurrentInstance()
 const plugins = ref([])
 
 const refresh = () => {
-    proxy.$axios.get('/plugins').then(res => {
+    proxy.$axios.get('plugins').then(res => {
         if (res.data.code != 0) {
             snackbar.error(res.data.msg)
             return
@@ -203,7 +203,7 @@ const saveOrder = () => {
         plugin.priority = plugins.value.length - plugins.value.indexOf(plugin)
     })
 
-    proxy.$axios.put('/plugins/reorder', {
+    proxy.$axios.put('plugins/reorder', {
         plugins: plugins.value
     }).then(res => {
         refresh()
