@@ -23,7 +23,7 @@ class WecomClient():
         self.secret_for_contacts = contacts_secret
         self.app = Quart(__name__)
         self.wxcpt = WXBizMsgCrypt(self.token, self.aes, self.corpid)
-        self.app.add_url_rule('callback/command', 'handle_callback', self.handle_callback_request, methods=['GET', 'POST'])
+        self.app.add_url_rule('/callback/command', 'handle_callback', self.handle_callback_request, methods=['GET', 'POST'])
         self._message_handlers = {
             "example":[],
         }
