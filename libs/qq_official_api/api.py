@@ -47,7 +47,7 @@ class QQOfficialClient:
     def __init__(self, secret: str, token: str, app_id: str):
         self.app = Quart(__name__)
         self.app.add_url_rule(
-            "/callback/command",
+            "callback/command",
             "handle_callback",
             self.handle_callback_request,
             methods=["GET", "POST"],

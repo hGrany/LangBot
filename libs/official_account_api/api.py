@@ -35,7 +35,7 @@ class OAClient():
         self.base_url = 'https://api.weixin.qq.com'
         self.access_token = ''
         self.app = Quart(__name__)
-        self.app.add_url_rule('/callback/command', 'handle_callback', self.handle_callback_request, methods=['GET', 'POST'])
+        self.app.add_url_rule('callback/command', 'handle_callback', self.handle_callback_request, methods=['GET', 'POST'])
         self._message_handlers = {
             "example":[],
         }
